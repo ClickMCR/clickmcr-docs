@@ -14,6 +14,9 @@ RUN npm ci
 # Bundle app source
 COPY . .
 
+# Hotfix weird Webpack error
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 # Build static files
 RUN npm run build
 
